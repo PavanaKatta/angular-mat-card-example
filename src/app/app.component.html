@@ -1,0 +1,16 @@
+<hello></hello>
+
+        <mat-card >
+    <mat-card-header>
+      <mat-card-title>Main Contacts</mat-card-title>
+    </mat-card-header>
+      <mat-divider [inset]="true" style="margin-bottom: 10px;"></mat-divider>
+      <mat-card-header  *ngFor="let contact of mainContacts | slice:0:4">
+        <div mat-card-avatar><hello [item]=contact.id></hello></div>
+        <mat-card-title style="font-weight: 700; font-size: small;">{{contact.name}}</mat-card-title>
+        <mat-card-subtitle style="font-size: smaller;">{{contact.role}}</mat-card-subtitle>
+      </mat-card-header>
+    <mat-card-actions align="end">
+      <a *ngIf="entityType === 1" (click)="onActiveTab(1)">View all</a>
+    </mat-card-actions>
+  </mat-card>
